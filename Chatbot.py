@@ -7,10 +7,17 @@ with st.sidebar:
     "[View the source code](https://github.com/yangdorodong/chatbot/edit/main/Chatbot.py)"
     "[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
 
-st.title("💬 Chatbot")
-st.caption("🚀 A Streamlit chatbot powered by OpenAI")
+st.title("MBTaIk")
+st.caption("원하는 MBTI 스타일을 말해봐!")
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
+    
+    st.session_state["messages"] = [
+        {
+            "role": "system", 
+            "content": "당신은 MBTI별 고민을 들어주는 챗봇입니다."
+        },
+        {"role": "assistant", "content": "원하는 MBTI가 있어요?"}
+                                   ]
 
 for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
