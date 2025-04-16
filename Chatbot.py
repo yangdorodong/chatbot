@@ -1,9 +1,6 @@
-chatbot/
-├ Chatbot.py
-├ mbti_few-shot_data.py
-
 from openai import OpenAI
 import streamlit as st
+from mbti_few-shot_data import few_shot_data
 
 with st.sidebar:
     openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
