@@ -1,6 +1,6 @@
 from openai import OpenAI
 import streamlit as st
-from mbti_few-shot_data import few_shot_data
+from mbti_few-shot_data import few_shot_dat
 
 with st.sidebar:
     openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
@@ -10,18 +10,18 @@ with st.sidebar:
 
 st.title("MBTaIk")
 st.caption("원하는 MBTI 스타일을 말해봐!")
+
 system_prompt = f"""너는 원하는 MBTI에 맞게 고민상담을 해주는 챗봇이야.
-이 데이터는 16가지 mbti의 특징을 보여줘{few-shot_data}
+이 데이터는 16가지 mbti의 특징을 보여줘:
+{few_shot_data}
 """
+
 if "messages" not in st.session_state:
     
     st.session_state["messages"] = [
-        {
-            "role": "system", 
-            "content": system_prompt
-        },
+        {"role": "system", "content": system_prompt},
         {"role": "assistant", "content": "원하는 MBTI가 있어요?"}
-                                   ]
+    ]
 
 for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
