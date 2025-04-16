@@ -1,3 +1,7 @@
+chatbot/
+├── Chatbot.py
+├── mbti_few-shot_data.py
+
 from openai import OpenAI
 import streamlit as st
 
