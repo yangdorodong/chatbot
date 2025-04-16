@@ -1,6 +1,6 @@
 from openai import OpenAI
 import streamlit as st
-from few-shot_data import few_shot_dat
+from fewshot_data import few_shot_dat
 
 with st.sidebar:
     openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
