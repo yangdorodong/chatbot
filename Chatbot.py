@@ -14,12 +14,10 @@ st.caption("원하는 MBTI 스타일을 말해봐!")
 
 
 if "messages" not in st.session_state:
-    system_prompt = f"""너는 원하는 MBTI에 맞게 고민상담을 해주는 챗봇이야.
-    이 데이터는 16가지 mbti의 특징을 보여줘:
-    {fewshot_data}
-    """
     st.session_state["messages"] = [
-        {"role": "system", "content": system_prompt},
+        {"role": "system", "content": f"""너는 원하는 MBTI에 맞게 고민상담을 해주는 챗봇이야.
+    이 데이터는 16가지 mbti의 특징을 보여줘:{fewshot_data}
+    """},
         {"role": "assistant", "content": "원하는 MBTI가 있어요?"}
     ]
 
